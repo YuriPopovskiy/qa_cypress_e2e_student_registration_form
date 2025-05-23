@@ -20,12 +20,10 @@ describe('Student Registration page', () => {
     cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(1) > .custom-control-label')
       .click();
     cy.get('#currentAddress').type('Springfield, Wall Ave, 74');
-    // eslint-disable-next-line max-len
-    cy.get('#state > .css-yk16xz-control > .css-1wy0on6 > .css-tlfecz-indicatorContainer')
-      .click();
-    cy.get('#react-select-3-option-0').click();
-    cy.get('.css-1wa3eu0-placeholder').click();
-    cy.get('#react-select-4-option-0').type('Delhi');
+    cy.get('#state').click();
+    cy.contains('.css-1n7v3ny-option', 'NCR').click();
+    cy.get('#city').click();
+    cy.contains('.css-1n7v3ny-option', 'Delhi').click();
     cy.get('#submit').click();
     cy.get('.modal-header')
       .should('contain.text', 'Thanks for submitting the form');
