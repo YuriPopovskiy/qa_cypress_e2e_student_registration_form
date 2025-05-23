@@ -5,7 +5,7 @@ describe('Student Registration page', () => {
     cy.visit('https://demoqa.com/automation-practice-form');
   });
 
-  it('should fill all fields in refister forms', () => {
+  it('should fill all fields in register forms', () => {
     cy.get('#firstName').type('Carmelo');
     cy.get('#lastName').type('Anthony');
     cy.get('#userEmail').type('carmeloAnt663@gmail.com');
@@ -20,8 +20,10 @@ describe('Student Registration page', () => {
     cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(1) > .custom-control-label')
       .click();
     cy.get('#currentAddress').type('Springfield, Wall Ave, 74');
-    cy.get('#stateCity-wrapper > :nth-child(2)').click();
-    cy.get('#react-select-3-option-0').type('NRC');
+    // eslint-disable-next-line max-len
+    cy.get('#state > .css-yk16xz-control > .css-1wy0on6 > .css-tlfecz-indicatorContainer')
+      .click();
+    cy.get('#react-select-3-option-0').click();
     cy.get('.css-1wa3eu0-placeholder').click();
     cy.get('#react-select-4-option-0').type('Delhi');
     cy.get('#submit').click();
